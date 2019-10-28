@@ -1,6 +1,12 @@
 var webpack = require('webpack')
 var path = require('path')
 
+if (process.env.NODE_ENV === 'test') {
+  require('dotenv').config({path: '.env.test'});
+} else if (process.env.NODE_ENV === 'development') {
+  require('dotenv').config({path: '.env.development'});
+}
+
 module.exports = {
   entry: './src/app.js',
   output: {
@@ -17,5 +23,10 @@ module.exports = {
         test: /\.js$/,
         exclude: /node_modules/
       }]
-  }
+  }, 
+  plugins: [
+    new webpack.DefinePlugin({
+      //any env property required. e.g. database connection. 
+    })
+  ]
 }
