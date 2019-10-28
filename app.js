@@ -1,5 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import HelloWorld from './components/HelloWorld';
+import { Provider } from 'react-redux';
+import Animation from './components/Animation';
+import store from './store/store';
 
-ReactDOM.render(<HelloWorld />, document.getElementById('app'));
+const jsx = (
+    <Provider store = {store}>
+        <Animation />
+    </Provider>
+)
+
+ReactDOM.render(jsx, document.getElementById('app'));
