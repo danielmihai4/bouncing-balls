@@ -4,7 +4,7 @@ import PureCanvas from './PureCanvas';
 import { BALL_COLOR, CANVAS_HEIGHT, CANVAS_WIDTH, RADIUS, GRAVITY, DAMPING, TRACTION } from './Constants';
 import { removeBall } from '../actions/actions';
 
-class Canvas extends React.Component {
+export class Canvas extends React.Component {
   
   constructor(props) {
     super(props);

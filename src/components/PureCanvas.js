@@ -1,9 +1,10 @@
+import uuid from 'uuid';
 import React from 'react';
 import { connect } from 'react-redux';
 import { setMouseXCoordinate, setMouseYCoordinate, addBall } from '../actions/actions';
 import { CANVAS_HEIGHT, CANVAS_WIDTH, MAX_SPEED } from './Constants';
 
-class PureCanvas extends React.Component {
+export class PureCanvas extends React.Component {
     
     shouldComponentUpdate = () => {
       return false;
@@ -11,6 +12,7 @@ class PureCanvas extends React.Component {
 
     onAddBall = () => {
         this.props.addBall({
+          id: uuid(),
           xCoordinate: this.props.mouseXCoordinate, 
           yCoordinate: this.props.mouseYCoordinate, 
           xVelocity: Math.floor(Math.random() * MAX_SPEED) + 1,
@@ -40,12 +42,12 @@ class PureCanvas extends React.Component {
     }
   }
 
-const mapStateToProps = (state, props) => ({
+const mapStateToProps = (state) => ({
     mouseXCoordinate: state.mouseCoordinates.xCoordinate, 
     mouseYCoordinate: state.mouseCoordinates.yCoordinate
 });
 
-const mapDispatchToProps = (dispatch, props) => ({
+const mapDispatchToProps = (dispatch) => ({
     setMouseXCoordinate: (xCoordinate) => dispatch(setMouseXCoordinate(xCoordinate)),
     setMouseYCoordinate: (yCoordinate) => dispatch(setMouseYCoordinate(yCoordinate)),
     addBall: (ball) => dispatch(addBall(ball))

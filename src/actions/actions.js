@@ -1,12 +1,10 @@
-import uuid from 'uuid';
-
 export const ADD_BALL = 'ADD_BALL';
 export const REMOVE_BALL = 'REMOVE_BALL';
 export const SET_MOUSE_X_COORDINATE = 'SET_MOUSE_X_COORDINATE';
 export const SET_MOUSE_Y_COORDINATE = 'SET_MOUSE_Y_COORDINATE';
 
 export function addBall(ball) {
-    return {type: ADD_BALL, ball: { id: uuid(), ...ball}};
+    return {type: ADD_BALL, ball};
 } 
 
 export function removeBall(id) {
