@@ -1,3 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`should render Animation correctly 1`] = `<Connect(Canvas) />`;
+exports[`should render Animation correctly 1`] = `
+<Connect(Canvas)
+  value={0}
+/>
+`;

@@ -1,7 +1,7 @@
 import React from 'react';
 import Canvas from './Canvas';
 
-export class Animation extends React.Component {
+export default class Animation extends React.Component {
     constructor(props) {
       super(props);
       this.state = { value: 0 };
@@ -22,8 +22,6 @@ export class Animation extends React.Component {
     }
   
     render() {
-      return <Canvas />;
+      return <Canvas value = {this.state.value}/>;
     }
   }
-
-export default Animation;

@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { Animation } from '../../components/Animation';
+import Animation from '../../components/Animation';
 
 let wrapper;
 
