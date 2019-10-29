@@ -4,18 +4,19 @@ import Canvas from './Canvas';
 export class Animation extends React.Component {
     constructor(props) {
       super(props);
+      
       this.updateAnimationState = this.updateAnimationState.bind(this);
     }
   
-    componentDidMount = () => {
+    componentDidMount() {
       this.rAF = requestAnimationFrame(this.updateAnimationState);
     }
   
-    updateAnimationState = () => {
+    updateAnimationState() {
       this.rAF = requestAnimationFrame(this.updateAnimationState);
     }
   
-    componentWillUnmount = () => {
+    componentWillUnmount() {
       cancelAnimationFrame(this.rAF);
     }
   
