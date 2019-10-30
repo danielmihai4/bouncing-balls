@@ -22,6 +22,6 @@ export default class Animation extends React.Component {
     }
   
     render() {
-      return <Canvas />;
+      return <Canvas value = {this.state.value}/>;
     }
   }
